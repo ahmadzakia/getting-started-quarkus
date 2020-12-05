@@ -17,5 +17,12 @@ public class GreetingResourceTest {
              .statusCode(200)
              .body(is("Hello RESTEasy"));
     }
-
+    @Test
+    public void testGreetingEndpoint() {
+        given()
+                .when().get("/hello/greeting/zaki")
+                .then()
+                .statusCode(200)
+                .body(is("hello zaki"));
+    }
 }
